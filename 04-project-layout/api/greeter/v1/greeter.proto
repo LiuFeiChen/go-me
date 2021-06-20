@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+option go_package = "api/greeter/v1;v1";
+
+package greeter.v1;
+
+service Greeter {
+  rpc GetGreeter (GetGreeterRequest) returns (GetGreeterReply) {}
+  rpc ListGreeter (ListGreeterRequest) returns (ListGreeterReply) {}
+  rpc CreateGreeter (CreateGreeterRequest) returns (CreateGreeterReply) {}
+  rpc UpdateGreeter (UpdateGreeterRequest) returns (UpdateGreeterReply) {}
+  rpc DeleteGreeter (DeleteGreeterRequest) returns (DeleteGreeterReply) {}
+}
+//
+message GetGreeterRequest {
+  int64 id = 1;
+}
+
+message GetGreeterReply {
+  int64 id = 1;
+  string job = 2;
+  string word = 3;
+}
+
+//
+message ListGreeterRequest {
+}
+
+message ListGt {
+  int64 id = 1;
+  string job = 2;
+  string word = 3;
+}
+message ListGreeterReply {
+    repeated ListGt data=1;
+}
+//
+message CreateGreeterRequest {
+  string job = 2;
+  string word = 3;
+}
+
+message CreateGreeterReply {
+}
+//
+message UpdateGreeterRequest {
+    int64 id = 1;
+    string job = 2;
+    string word = 3;
+}
+
+message UpdateGreeterReply {
+}
+//
+message DeleteGreeterRequest {
+  int64 id = 1;
+}
+
+message DeleteGreeterReply {
+}
